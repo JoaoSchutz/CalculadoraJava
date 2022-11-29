@@ -13,8 +13,7 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    /*Declara os atributos dos buttons, textviews, e imageviews criados na activity, para serem
-    * trabalhados nos métodos.*/
+    /*DECLARA OS ATRIBUTOS DOS BUTTONS, TEXTVIEWS, E IMAGEVIEWS CRIADOS NA ACTIVITY, PARA SEREM TRABALHADOS NOS MÉTODOS.*/
     private Button numero_zero, numero_um, numero_dois, numero_tres, numero_quatro, numero_cinco, numero_seis, numero_sete,numero_oito,numero_nove, ponto, soma, subtracao, multiplicacao,divisao,igual, botao_limpar;
     private TextView txt_expressao, txt_resultado;
     private ImageView backspace;
@@ -24,11 +23,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*Chama o método iniciar componentes, o qual é respondável por mostrar o número clicado*/
+        /*CHAMA O MÉTODO INICIAR COMPONENTES, O QUAL É RESPONSÁVEL POR MOSTRAR O NÚMERO CLICADO*/
         IniciarComponentes();
         getSupportActionBar().hide();
 
-        /*Captura os valores de cada button*/
+        /*CAPTURA OS VALORES DE CADA BUTTON.*/
         numero_zero.setOnClickListener(this);
         numero_um.setOnClickListener(this);
         numero_dois.setOnClickListener(this);
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         multiplicacao.setOnClickListener(this);
         divisao.setOnClickListener(this);
 
-        /*Botão de limpar deixa NULL o texto de expressão e resultado*/
+        /*BOTÃO DE LIMPAR DEIXA NULL O TEXTO DE EXPRESSÃO E RESULTADO*/
         botao_limpar.setOnClickListener(new View.OnClickListener(){
             @Override
                     public void onClick(View v){
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        /*Configura o backspace, pra que ele volte uma casa quando clicado*/
+        /*CONFIGURA O BACKSPACE, PRA QUE ELE VOLTE UMA CASA QUANDO CLICADO*/
         backspace.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -87,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-    }
+        }
 
     private void IniciarComponentes(){
         numero_um = findViewById(R.id.numero_um);
@@ -112,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         backspace = findViewById(R.id.backspace);
     }
 
-        /*Faz adicionar o número clicado (ou símbolo aritmético) do lado do número já posto*/
+    /*ADICIONA O NÚMERO CLICADO (OU SÍMBOLO ARITMÉTICO) DO LADO DO NÚMERO JÁ POSTO.*/
     public void AcrescentarUmaExpressao(String string, boolean limpar_dados){
         if(txt_resultado.getText().equals("")){
             txt_expressao.setText(" ");
